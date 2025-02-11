@@ -1,10 +1,7 @@
 -- m6825awZiS
--- version 5 
--- atom Admin
--- detected some skids if you skid i will black list you 
--- also httplogger wont work any more
+-- version 1.0.0 
 
--- hay your not supposed to see this skid!
+-- Skid this all you want 
 local sound = Instance.new("Sound")
 sound.SoundId = "rbxassetid://6366788549"
 sound.Parent = game:GetService("SoundService")
