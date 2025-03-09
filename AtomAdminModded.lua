@@ -21,7 +21,7 @@ local messageframe = Instance.new("Frame")
 local message = Instance.new("TextLabel")
 
 notice.Name = "notice"
-notice.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+notice.Parent = game.Players.LocalPlayer:FindFirstChild("PlayerGui")
 notice.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 notice.ResetOnSpawn = false
 
@@ -380,8 +380,8 @@ end
 function onSelected()
 	local char = player.Character
 	if char then
-		local humanoid = char:WaitForChild("Humanoid")
-		local root = char:WaitForChild("HumanoidRootPart")
+		local humanoid = char:FindFirstChild("Humanoid")
+		local root = char:FindFirstChild("HumanoidRootPart")
 		currentPos = root.Position
 		selected = true
 		root.Anchored = true
@@ -456,7 +456,7 @@ elseif plr.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
   end
         getChar().HumanoidRootPart.CFrame = old
         plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
         
         -- wl commands
         elseif spaceSplit[1] == prefix.."digmuf" or spaceSplit[1] == "/e digmuf" then
@@ -514,7 +514,7 @@ local target = getPlr(tostring(spaceSplit[2]):lower())
 			end
 		end)
         plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
         else
         Chatnotice("Failed To Execute Command Not Whitelisted")
 	end
@@ -907,7 +907,7 @@ tool.Grip = CFrame.new(0,-1,0)
         getChar().HumanoidRootPart.CFrame = getChar().HumanoidRootPart.CFrame * CFrame.new(0,-2,0)
         getChar().HumanoidRootPart.CFrame = target.Character.Humanoid.RootPart.CFrame
         getChar().HumanoidRootPart.CFrame = getChar().HumanoidRootPart.CFrame * CFrame.new(0,-8,0)
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
      
 
     elseif spaceSplit[1] == prefix.."btools" or spaceSplit[1] == prefix.."f3x" or spaceSplit[1] == "/e btools" or spaceSplit[1] == "/e f3x"  then
@@ -1364,11 +1364,11 @@ elseif spaceSplit[1] == prefix.."dupe" or spaceSplit[1] == prefix.."dupetools" t
         workspace.FallenPartsDestroyHeight = 0/0
        
         for i = 1, val do
-            plr.Character:WaitForChild("Humanoid").BreakJointsOnDeath = false
-            plr.Character:WaitForChild("Humanoid").RequiresNeck = false
+            plr.Character:FindFirstChild("Humanoid").BreakJointsOnDeath = false
+            plr.Character:FindFirstChild("Humanoid").RequiresNeck = false
             replacehum()
             task.wait(0.5)
-            plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(math.huge,math.huge,math.huge)
+            plr.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(math.huge,math.huge,math.huge)
             task.wait(0.5)
             for i,v in pairs(plr.Backpack:GetChildren()) do
                 if v:IsA("Tool") then
@@ -1383,8 +1383,8 @@ elseif spaceSplit[1] == prefix.."dupe" or spaceSplit[1] == prefix.."dupetools" t
                 end
             end
             plr.CharacterAdded:Wait()
-            plr.Character:WaitForChild("HumanoidRootPart")
-            plr.Character:WaitForChild("Humanoid")
+            plr.Character:FindFirstChild("HumanoidRootPart")
+            plr.Character:FindFirstChild("Humanoid")
         end
         for i,v in pairs(dupedtools) do
             if v.Parent == game:GetService("Workspace") then
@@ -1400,7 +1400,7 @@ elseif spaceSplit[1] == prefix.."dupe" or spaceSplit[1] == prefix.."dupetools" t
             end
         end
         plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
 
     elseif spaceSplit[1] == prefix.."changeprefix" or spaceSplit[1] == prefix.."setprefix" then
         local val = (spaceSplit[2])
@@ -1427,8 +1427,8 @@ elseif spaceSplit[1] == prefix.."dupe" or spaceSplit[1] == prefix.."dupetools" t
             task.wait(0.1)
             game.Players:Chat("-re")
             plr.CharacterAdded:Wait()
-            plr.Character:WaitForChild("HumanoidRootPart")
-            plr.Character:WaitForChild("Humanoid")
+            plr.Character:FindFirstChild("HumanoidRootPart")
+            plr.Character:FindFirstChild("Humanoid")
             end
             for i,v in pairs(dupedtools) do
             if v.Parent == game:GetService("Workspace") then
@@ -1829,7 +1829,7 @@ end
     local old = plr.Character:FindFirstChild("HumanoidRootPart").CFrame
       reset()
         plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
 		if plr.Character.Humanoid.Health == 0 then
 			 replacechar()
   local cr = getChar()
@@ -1842,7 +1842,7 @@ end
     local old = plr.Character:FindFirstChild("HumanoidRootPart").CFrame
       reset()
         plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
 	end
         
         elseif spaceSplit[1] == prefix.."gr" or spaceSplit[1] == prefix.."gamerespawn" or spaceSplit[1] == "/e gamerespawn" or spaceSplit[1] == "/e gr" then
@@ -1990,7 +1990,7 @@ end
         end
         hum:UnequipTools()
 		plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
         
         
                         
@@ -2069,7 +2069,7 @@ end
         end
         hum:UnequipTools()
 		plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
         elseif spaceSplit[1] == prefix.."ultrafling"  or spaceSplit[1] == prefix.."ufling" or spaceSplit[1] == "/e ultrafling" or spaceSplit[1] == "/e ufling"  then
         local target = getPlr(tostring(spaceSplit[2]):lower())
         if target == nil then return end
@@ -2134,7 +2134,7 @@ end
         end
         hum:UnequipTools()
 		plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
 	
 	elseif spaceSplit[1] == prefix.."flingbypass" or spaceSplit[1] == prefix.."bfling"  then
         local target = getPlr(tostring(spaceSplit[2]):lower())
@@ -2200,7 +2200,7 @@ end
         end
         hum:UnequipTools()
 		plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
 
     elseif spaceSplit[1] == prefix.."rejoin" or spaceSplit[1] == prefix.."rj" or spaceSplit[1] == "/e rejoin" or spaceSplit[1] == "/e rj" then
 		Notice("Now Rejoining The Server This Should Not Take Long Depends On Your Executor.")
@@ -2295,7 +2295,7 @@ local Number = Instance.new("TextLabel")
 --Properties:
 
 commands.Name = "commands"
-commands.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+commands.Parent = game.Players.LocalPlayer:FindFirstChild("PlayerGui")
 commands.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 commands.ResetOnSpawn = false
 
@@ -3300,7 +3300,7 @@ plr.Character.Animate.Disabled = true
         getChar().HumanoidRootPart.CFrame = getChar().HumanoidRootPart.CFrame * CFrame.new(0,-8,0)
         wait()
         end
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
 	end
 	if Command("fling") then
 	local target = getPlr(Arg2)
@@ -3364,7 +3364,7 @@ plr.Character.Animate.Disabled = true
         end
         hum:UnequipTools()
 		plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
 	end
 	if Command("superfling") then
 	local target = getPlr(Arg2)
@@ -3428,7 +3428,7 @@ plr.Character.Animate.Disabled = true
         end
         hum:UnequipTools()
 		plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
 	end
 	if Command("ultrafling") then
 	local target = getPlr(Arg2)
@@ -3492,7 +3492,7 @@ plr.Character.Animate.Disabled = true
         end
         hum:UnequipTools()
 		plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
 	end
 	if Command("bfling") then
 	local target = getPlr(Arg2)
@@ -3556,7 +3556,7 @@ plr.Character.Animate.Disabled = true
         end
         hum:UnequipTools()
 		plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+        getChar():FindFirstChild("HumanoidRootPart").CFrame = old
 	end
 	if Command("breakchat") then
 	wait(0.5)
@@ -3612,7 +3612,7 @@ local function Tween(Object, Time, Style, Direction, Customization)
 end
 
 cmdbar.Name = "cmdbar"
-cmdbar.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+cmdbar.Parent = game.Players.LocalPlayer:FindFirstChild("PlayerGui")
 cmdbar.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 cmdbar.ResetOnSpawn = false
 
