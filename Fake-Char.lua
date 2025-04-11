@@ -4,7 +4,9 @@
 local RunService = game:GetService("RunService")
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
+if player.Name ~= "owie3c" then
  loadstring(game:HttpGet("https://raw.githubusercontent.com/shawulplayz/ScriptTesting/refs/heads/main/Fake2Char.lua"))()
+end
 local hrp = character:WaitForChild("HumanoidRootPart")
 local UpperTorso = character:WaitForChild("UpperTorso")
 local LeftLowerArm = character:WaitForChild("LeftLowerArm")
