@@ -203,7 +203,6 @@ local function SKMAY_fake_script() -- Execute.LocalScript
 		game:GetService("Workspace")
 	}
 	
-	-- Tries to use a RemoteEvent or RemoteFunction with the given payload
 	local function tryRemote(remote, code)
 		if remote:IsA("RemoteEvent") then
 			print("Checking RemoteEvent:", remote.Name)
@@ -225,8 +224,7 @@ local function SKMAY_fake_script() -- Execute.LocalScript
 	
 		return false
 	end
-	
-	-- Returns the first backdoor Remote used, or nil
+
 	local function findFirstWorkingRemote(code)
 		for _, service in ipairs(servicesToScan) do
 			for _, obj in ipairs(service:GetDescendants()) do
