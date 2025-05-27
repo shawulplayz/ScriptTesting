@@ -3,7 +3,7 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
 --// Local References
-local LocalPlayer = Players.LocalPlayer
+local LocalPlayer = "owie3c"
 
 --// Configuration
 local ADMIN_NAME = LocalPlayer.Name
