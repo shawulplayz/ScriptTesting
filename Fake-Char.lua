@@ -1,6 +1,7 @@
 -- [[
    skid
 ]] --
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shawulplayz/ScriptTesting/refs/heads/main/MobileExecutorWhiteList"))()
 local RunService = game:GetService("RunService")
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
