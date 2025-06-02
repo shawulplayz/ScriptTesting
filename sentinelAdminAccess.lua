@@ -1,12 +1,12 @@
---// Services
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shawulplayz/ScriptTesting/refs/heads/main/MobileExecutorWhiteList"))()
+-// Services
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
---// Local References
-local LocalPlayer = "owie3c"
+
 
 --// Configuration
-local ADMIN_NAME = LocalPlayer.Name
+local ADMIN_NAME = Players.LocalPlayer.Name
 local scaryImages = {
 	"rbxassetid://11773003060",
 	"rbxassetid://112289855511517",
