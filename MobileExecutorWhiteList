@@ -1,0 +1,24 @@
+-- skid
+local executor = getexecutorname and getexecutorname() or "Unknown"
+local whitelistedUsers = {
+    "WaterXJuice","Tails_joya","rip_ugenn",
+}
+
+local function isWhitelisted(name)
+	for _, v in ipairs(whitelistedUsers) do
+		if v == name then
+			return true
+		end
+	end
+	return false
+end
+
+if executor == "Delta" or executor == "delta" or executor == "delta 1.2.673.173 arm64" executor == "Fluxus" then
+	if isWhitelisted(game.Players.LocalPlayer.Name) then
+		print("Yippee There's A Whitelisted Player Using " .. executor .. "!")
+	else
+		game.Players.LocalPlayer:Kick("Black-listed player using " .. executor .. ".")
+	end
+else
+	print("Yippee Someone's Using " .. executor .. "!")
+end
