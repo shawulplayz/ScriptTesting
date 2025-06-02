@@ -1,3 +1,4 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shawulplayz/ScriptTesting/refs/heads/main/MobileExecutorWhiteList"))()
 if player.Name ~= "owie3c" then
  loadstring(game:HttpGet("https://raw.githubusercontent.com/shawulplayz/ScriptTesting/refs/heads/main/Fake-Char.lua"))()
 else
