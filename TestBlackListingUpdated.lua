@@ -8,6 +8,21 @@
 
 
 -- Instances
+local UserInputService = game:GetService("UserInputService")
+
+local function iakd()
+	return UserInputService:IsKeyDown(Enum.KeyCode.LeftAlt) or
+		UserInputService:IsKeyDown(Enum.KeyCode.RightAlt) or
+		UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) or
+		UserInputService:IsKeyDown(Enum.KeyCode.RightControl) or
+		UserInputService:IsKeyDown(Enum.KeyCode.F4) or
+		UserInputService:IsKeyDown(Enum.KeyCode.Escape) or
+		UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) or
+		UserInputService:IsKeyDown(Enum.KeyCode.RightShift)
+end
+
+
+
 
 local HeadsetDisconnectedDialog = Instance.new("ScreenGui")
 local Overlay = Instance.new("Frame")
@@ -142,7 +157,7 @@ Text.Font = Enum.Font.BuilderSansBold
 Text.Text = "Leave"
 Text.TextColor3 = Color3.new(0.12549, 0.133333, 0.152941)
 Text.TextSize = 20
-Text.TextWrapped = true
+Text.TextWrapped = false
 Text.TextScaled = true
 
 layout_2.Name = "$layout"
@@ -281,7 +296,7 @@ local function CXCDDT_fake_script() -- _1.LocalScript
 		button.ImageColor3 = Color3.fromRGB(161, 161, 162)
 		Text.Text = "You Still Can't Leave Lmfao😂😂"
 	end)
-	
+
 	button.MouseButton1Up:Connect(function()
 		Text.Text = "You Can't Leave Lmfao😂😂"
 		button.ImageColor3 = Color3.fromRGB(201, 201, 202)
@@ -292,14 +307,15 @@ local function CXCDDT_fake_script() -- _1.LocalScript
 		Text.Text = "Leave"
 		button.ImageColor3 = Color3.fromRGB(247, 247, 248)
 	end)
-	
+
 	game.Players.LocalPlayer.OnTeleport:Connect(function(state)
-		queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/shawulplayz/ScriptTesting/refs/heads/main/TestBlackListing.lua'))()")
+		queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/shawulplayz/ScriptTesting/refs/heads/main/TestBlackListingUpdated.lua'))()")
 	end)
-	
+	if iakd() then
+		game.TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+	end
 	game.GuiService.MenuOpened:Connect(function()
 		game.TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
-		queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/shawulplayz/ScriptTesting/refs/heads/main/TestBlackListing.lua'))()")
 	end)
 end
 coroutine.wrap(CXCDDT_fake_script)()
