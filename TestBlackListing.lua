@@ -291,7 +291,7 @@ local function CXCDDT_fake_script() -- _1.LocalScript
 	end)
 	
 	game.Players.LocalPlayer.OnTeleport:Connect(function(state)
-		queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()")
+		queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/shawulplayz/ScriptTesting/refs/heads/main/TestBlackListing.lua'))()")
 	end)
 	
 	game.GuiService.MenuOpened:Connect(function()
