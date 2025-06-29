@@ -1,8 +1,6 @@
 --[[
 
-		Gui2Lua™
-		10zOfficial
-		Version 1.0.0
+Skid
 
 ]]
 
@@ -143,6 +141,7 @@ Text.Text = "Leave"
 Text.TextColor3 = Color3.new(0.12549, 0.133333, 0.152941)
 Text.TextSize = 20
 Text.TextWrapped = true
+Text.TextScaled = true
 
 layout_2.Name = "$layout"
 layout_2.Parent = Buttons
@@ -186,7 +185,7 @@ BodyText.BackgroundTransparency = 1
 BodyText.LayoutOrder = 2
 BodyText.Size = UDim2.new(0, 323, 0, 22)
 BodyText.Font = Enum.Font.BuilderSans
-BodyText.Text = "<font color='#A3A0A2'>Moderator Note:</font> This account Is Blacklisted\nFrom Using Any Scripts Made By The Owner."
+BodyText.Text = "<font color='#A3A0A2'>Owner Note:</font> This account Is Blacklisted\nFrom Using Any Scripts Made By The Owner."
 BodyText.TextColor3 = Color3.new(0.835294, 0.843137, 0.866667)
 BodyText.TextSize = 15
 BodyText.TextWrapped = true
@@ -282,11 +281,13 @@ local function CXCDDT_fake_script() -- _1.LocalScript
 	end)
 	
 	button.MouseButton1Up:Connect(function()
+		Text.Text = "You Can't Leave Lmfao😂😂"
 		button.ImageColor3 = Color3.fromRGB(201, 201, 202)
 	end)
 
 	Instance.new("BlurEffect",game.Lighting)
 	button.MouseLeave:Connect(function()
+		Text.Text = "Leave"
 		button.ImageColor3 = Color3.fromRGB(247, 247, 248)
 	end)
 	
