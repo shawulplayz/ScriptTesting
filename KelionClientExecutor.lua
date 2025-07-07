@@ -2479,7 +2479,7 @@ task.spawn(C_57);
 -- StarterGui.ScreenGui.Setting.GameInfo.LocalScript
 local function C_5a()
 local script = G2L["5a"];
-	local ahh = "Made By g4mg_99."
+	local ahh = "Made By Shawulplayz."
 	
 	if ahh then
 		script.Parent.Text = ahh
