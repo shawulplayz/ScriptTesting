@@ -1,4 +1,5 @@
--- sorry chat i had to use cgpt
+-- i was too lazy to make it myself
+queueteleport =  missing("function", queue_on_teleport or (syn and syn.queue_on_teleport) or (fluxus and fluxus.queue_on_teleport))
 local Players = game:GetService("Players")
 local TeleportService = game:GetService("TeleportService")
 local HttpService = game:GetService("HttpService")
@@ -61,8 +62,8 @@ Players.LocalPlayer.OnTeleport:Connect(function(State)
 			and target.SurfaceGui.Frame:FindFirstChild("TextButton") then
 
 			local button = target.SurfaceGui.Frame.TextButton
-			if not string.find(button.Text, "Server age: 12 Hours,") then
-				-- Only run when that specific text is found
+			if typeof(button.Text) == "string" and not string.find(button.Text, "Server age: 12 Hours,") then
+				-- Only run when the text does NOT contain "Server age: 12 Hours,"
 				queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/shawulplayz/ScriptTesting/refs/heads/main/sumtin.lua'))()")
 			end
 		end
